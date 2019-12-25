@@ -17,7 +17,7 @@ var upload = multer({ dest: 'uploads/' })
 app.use(express.static(path.join(__dirname,'/build')))
 app.use(cors()) 
 mongoose.Promise= global.Promise;
-mongoose.connect("mongodb://localhost:27017/newsdb");
+mongoose.connect("mongodb://u1qznrvrl1p2ow0mo55m:AzbwswFvP1DZL99qpvxJ@bmv33awfkbtvv01-mongodb.services.clever-cloud.com:27017/bmv33awfkbtvv01/newsdb");
 app.use(bodyParser.json())
 
 routes(app)
@@ -53,6 +53,6 @@ app.get('*',(req,res)=>{
 })
 
 
-app.listen(9000,()=>{
+app.listen(8080,()=>{
 	console.log('Listening at 9000');
 })
