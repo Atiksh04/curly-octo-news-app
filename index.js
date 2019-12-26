@@ -17,7 +17,7 @@ var upload = multer({ dest: 'uploads/' })
 app.use(express.static(path.join(__dirname,'/build')))
 app.use(cors()) 
 mongoose.Promise= global.Promise;
-mongoose.connect("mongodb://localhost:27017/newsdatabase");
+mongoose.connect("mongodb://admin:6hX42t0k1SczxhMz@SG-news-29523.servers.mongodirector.com:27017/admin");
 app.use(bodyParser.json())
 
 routes(app)
@@ -54,5 +54,5 @@ app.get('*',(req,res)=>{
 
 
 app.listen(8080,()=>{
-	console.log('Listening at 9000');
+	console.log('8080')
 })
