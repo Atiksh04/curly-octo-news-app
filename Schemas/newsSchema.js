@@ -11,6 +11,7 @@ export const newsSchema=mongoose.Schema({
 	metaTag:String,
 	tag:String,
 	category:String,
+	section:String,
 	photo:{ data: Buffer, contentType: String },
 	createdAt: {type: Date, default: Date.now}
 })
