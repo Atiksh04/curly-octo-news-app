@@ -20,7 +20,7 @@ let newData = new data(req.body);
 export const getContent=(req,res)=>{
 	data.find({},(err,data)=>{
 		if(err)
-			{
+			{console.log(err)
 			res.send('error in fetching data')
 			}
 		else{
