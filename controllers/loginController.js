@@ -22,15 +22,22 @@ console.log('req.body',req.body);
 export const getAdmin=(req,res)=>{
 	data.find({email:req.body.email},(err,dataFound)=>{
 		if(err)
-			console.log('error in fetching data',err)
+		{	console.log('error in fetching data',err)
+		res.json({message:"Error in Fetching"})
+		}
 		else
 			{	console.log('body',req.body)
 				dataFound= dataFound[0]
-				if(!bcrypt.compareSync(req.body.password,dataFound.password))
+				if(dataFound === undefined){
+					res.json({message:"User not found"})
+				}else{
+					if(!bcrypt.compareSync(req.body.password,dataFound.password))
 				 	res.json({message:"Authentication failed wrong password"});
 				else{
 					res.json({message:"Success", token:jwt.sign({email:dataFound.email},'RESTFULAPIs')})
-				}
+				}	
+				}			
+				
 			}
 	})
 }
