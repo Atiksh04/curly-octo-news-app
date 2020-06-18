@@ -17,7 +17,7 @@ var upload = multer({ dest: 'uploads/' })
 app.use(express.static(path.join(__dirname,'/build')))
 app.use(cors()) 
 mongoose.Promise= global.Promise;
-mongoose.connect("mongodb://localhost:27017/upsccurrentfinal");
+mongoose.connect("mongodb://admin:n0cgsrgsy1sYlIPT@SG-remote0works0cloud0atiksh-34914.servers.mongodirector.com:27017/admin");
 app.use(bodyParser.json())
 
 routes(app)
